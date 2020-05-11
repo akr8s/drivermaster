@@ -22,7 +22,7 @@ ENV DRIVER_VERSION=$DRIVER_VERSION
 
 # Install the userspace components and copy the kernel module sources.
 RUN cd /tmp && \
-    curl -fSsl -O https://us.download.nvidia.com/tesla/440.64.00/NVIDIA-Linux-x86_64-440.64.00.run && \
+    curl -fSsl -O http://10.72.35.240/repos/rhcos/NVIDIA-Linux-x86_64-440.64.00.run && \
     sh NVIDIA-Linux-x86_64-$DRIVER_VERSION.run -x && \
     cd NVIDIA-Linux-x86_64-$DRIVER_VERSION && \
     ./nvidia-installer --silent \
