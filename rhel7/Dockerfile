@@ -17,12 +17,12 @@ RUN curl -fsSL -o /usr/local/bin/donkey https://github.com/3XX0/donkey/releases/
 
 #ARG BASE_URL=http://us.download.nvidia.com/XFree86/Linux-x86_64
 ARG BASE_URL=https://us.download.nvidia.com/tesla
-ARG DRIVER_VERSION=440.33.01
+ARG DRIVER_VERSION=440.64.00
 ENV DRIVER_VERSION=$DRIVER_VERSION
 
 # Install the userspace components and copy the kernel module sources.
 RUN cd /tmp && \
-    curl -fSsl -O http://10.72.35.240/repos/rhcos/NVIDIA-Linux-x86_64-440.33.01.run && \
+    curl -fSsl -O https://us.download.nvidia.com/tesla/440.64.00/NVIDIA-Linux-x86_64-440.64.00.run && \
     sh NVIDIA-Linux-x86_64-$DRIVER_VERSION.run -x && \
     cd NVIDIA-Linux-x86_64-$DRIVER_VERSION && \
     ./nvidia-installer --silent \
